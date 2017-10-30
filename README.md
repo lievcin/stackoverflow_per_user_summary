@@ -23,3 +23,5 @@ To run the task on the server:
 # hadoop jar dist/TweetLength.jar TweetLength /data/olympictweets2016rio out #
 to merge results
 # hadoop fs -getmerge out tweets_by_length.txt #
+
+# chart at https://cloud.highcharts.com/charts/onydime/ #
