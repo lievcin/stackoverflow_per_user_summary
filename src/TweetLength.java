@@ -7,7 +7,6 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 
@@ -20,13 +19,10 @@ public class TweetLength {
         job.setMapperClass(TweetMapper.class);
         job.setReducerClass(TweetReducer.class);
 
-        job.setInputFormatClass(SequenceFileInputFormat.class);
-
-        job.setOutputKeyClass(Text.class);
-
-        job.setOutputValueClass(Text.class);
         job.setMapOutputKeyClass(IntWritable.class);
         job.setMapOutputValueClass(IntWritable.class);
+
+        job.setNumReduceTasks(5);
 
         Path outputPath = new Path(output);
         FileInputFormat.setInputPaths(job, StringUtils.join(input, ","));

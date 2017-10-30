@@ -1,11 +1,9 @@
 import org.apache.hadoop.io.Text;
-// import java.util.Arrays;
-
 
 public class TweetsParser {
 
-	private int epoch;
-	private int tweetId;
+	private long epoch;
+	private String tweetId;
 	private String tweetBody;
 	private String device;
 	private boolean valid_structure;
@@ -15,9 +13,11 @@ public class TweetsParser {
 
 		tweet_parts = tweet.toString().split("\\;");
 
-		if (tweet_parts.length == 4) {
-			epoch = Integer.parseInt(tweet_parts[0]);
-			tweetId = Integer.parseInt(tweet_parts[1]);
+		if (tweet_parts.length == 4 && tweet_parts[0].charAt(0) != '#') {
+			//the condition above is due to a series of tweets that have no id somehow or are corrupted
+			//but they have 4 elements as ; is being used inside the text of the tweet itself.
+			epoch = Long.parseLong(tweet_parts[0]);
+			tweetId = tweet_parts[1];
 			tweetBody = tweet_parts[2];
 			device = tweet_parts[3];
 			valid_structure = true;
