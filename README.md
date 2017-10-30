@@ -24,4 +24,4 @@ To run the task on the server:
 to merge results
 # hadoop fs -getmerge out tweets_by_length.txt #
 
-# chart at https://cloud.highcharts.com/show/onydime/2 #
+# chart at https://cloud.highcharts.com/show/onydime #
