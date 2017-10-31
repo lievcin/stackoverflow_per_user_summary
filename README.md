@@ -15,13 +15,12 @@ Note 1: For considering the size of a message you should simply refer to the len
 
 Note 2: There are numerous tweets written in foreign languages, which contain characters with non-standard encoding that might cause some unexpected (i.e. too high) values. This is a common occurrence when dealing with real data. We recommend you filter out all the messages with a length longer than 140 characters. You can also handle them differently if you prefer so and provide an appropriate explanation.  The report has to explain the approach you took, and the reasoning behind it
 
-### How do I get set up? ###
+### To build the project run: ###
 
-To build the project run: 
-# ant clean dist #
+### ant clean dist ###
 To run the task on the server:
-# hadoop jar dist/TweetLength.jar TweetLength /data/olympictweets2016rio out #
+### hadoop jar dist/TweetLength.jar TweetLength /data/olympictweets2016rio out ###
 to merge results
-# hadoop fs -getmerge out tweets_by_length.txt #
+### hadoop fs -getmerge out tweets_by_length.txt ###
 
-# chart at https://cloud.highcharts.com/show/onydime #
+### chart at https://cloud.highcharts.com/show/onydime ###
