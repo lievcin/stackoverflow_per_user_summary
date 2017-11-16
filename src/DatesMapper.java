@@ -49,7 +49,9 @@
 
 		      // String id = rootElem.getAttribute("Id");
 		      // String creationDate = rootElem.getAttribute("CreationDate");
-		      String UserId = rootElem.getAttribute("UserId"); //for Badges
+		      String UserId = rootElem.getAttribute("UserId"); //for Badges, Comments
+		      // String UserId = rootElem.getAttribute("OwnerUserId"); //for Posts
+
 
 					data.set(UserId);
 		    	context.write(data, one);
